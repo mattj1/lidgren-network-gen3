@@ -134,7 +134,7 @@ namespace Lidgren.Network
 				const uint IOC_IN = 0x80000000;
 				const uint IOC_VENDOR = 0x18000000;
 				uint SIO_UDP_CONNRESET = IOC_IN | IOC_VENDOR | 12;
-				m_socket.IOControl((int)SIO_UDP_CONNRESET, new byte[] { Convert.ToByte(false) }, null);
+				//m_socket.IOControl((int)SIO_UDP_CONNRESET, new byte[] { Convert.ToByte(false) }, null);
 			}
 			catch
 			{

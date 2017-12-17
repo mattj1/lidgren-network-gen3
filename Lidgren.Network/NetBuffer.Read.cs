@@ -252,6 +252,22 @@ namespace Lidgren.Network
 			return true;
 		}
 
+        /// <summary>
+        /// Matt
+        /// </summary>
+        [CLSCompliant(false)]
+        public bool ReadUInt32(int numberOfBits, out UInt32 result)
+        {
+            if (m_bitLength - m_readPosition<numberOfBits)
+            {
+                result = 0;
+                return false;
+            }
+            result = NetBitWriter.ReadUInt32(m_data, numberOfBits, m_readPosition);
+            m_readPosition += numberOfBits;
+            return true;
+        }
+        
 		/// <summary>
 		/// Reads an unsigned integer stored in 1 to 32 bits, written using Write(UInt32, Int32)
 		/// </summary>
